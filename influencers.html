@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Najem</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <base href="/">
+    <link rel="stylesheet" href="_public/styles/main.css">
+    <!-- Facebook Open Graph Meta Tags -->
+    <meta property="fb:app_id" content="app_id"> <!-- facebook app id-->
+    <meta property="og:locale" content="ar_LB"> <!-- language -->
+    <meta property="og:title" content="Nancy's Favorite Toy"> <!-- influencers page title -->
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="Nancy loves cars but she loves one specific kind  of a car, that makes her so happy."> <!-- influencers page description -->
+    <meta property="og:image:url" content="https://s3-eu-west-1.amazonaws.com/fontfaces/sharingimages/najem-1200x1200.jpg"> <!-- sharing image url -->
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:site" content="@JohnDoe_3"> <!-- twitter handle -->
+    <meta name="twitter:card" content="photo">
+    <meta name="twitter:title" content="Nancy's Favorite Toy"> <!-- home page title -->
+    <meta name="twitter:description" content="Nancy loves cars but she loves one specific kind  of a car, that makes her so happy."> <!-- influencers page description -->
+    <meta name="twitter:image:src" content="https://s3-eu-west-1.amazonaws.com/fontfaces/sharingimages/najem-1200x1200.jpg"> <!-- sharing image url -->
+    <!-- Google+ Open Graph Meta Tags -->
+    <meta property="og:type" content="article">
+    <meta itemprop="og:title" content="Nancy's Favorite Car"> <!-- home page title -->
+    <meta itemprop="og:description" content="Nancy knew that she loves to ride Bimmers. A luxurious, fast, with a very attractive sport look."> <!-- influencers page desciption -->
+    <meta itemprop="og:image:url" content="https://s3-eu-west-1.amazonaws.com/fontfaces/sharingimages/najem-1200x1200.jpg"> <!-- sharing image url -->
+  </head>
+  <body dir="rtl">
+    <div class="mother-ship">
+      <!-- Navbar -->
+      <nav class="navbar row between-xs middle-xs nav-relative" navbardirective>
+        <div class="login-profile col-xs-2 col-sm-4">
+          <a href="/login">
+            <div class="login-icon"></div>
+            <p class="logout-text">تسجيل الدخول</p>
+          </a>
+        </div>
+        <div class="col-xs-8 col-sm-4 col-md-4 col-lg-2">
+          <div class="row nav-pills">
+            <div class="latest-tab col-xs-4">
+              <a class="latest-link" href="/latest-articles.html">أحدث</a>
+            </div>
+            <div class="explore-tab col-xs-4">
+              <a class="explore-link" href="/index.html">إستكشف</a>
+            </div>
+            <div class="main-tab col-sm-6">
+              <a class="main-link" href="/index.html">الرئيسية</a>
+            </div>
+            <div class="celebrities-tab col-xs-4 col-sm-6">
+              <a class="celebrities-link" href="/influencers.html" >المشاهير</a>
+            </div>
+          </div>
+        </div>
+        <div class="logo col-xs-2 col-sm-4">
+          <a class="najem-link" href="/">
+            <div class="logo"></div>
+          </a>
+        </div>
+      </nav>
+      <!-- End Navbar -->
+      <div>
+        <div class="celebrities-view row">
+          <div class="row col-xs-12 center-sm filter-wrapper">
+            <div class="search">
+              <input type="text" placeholder="إبحث" class="celebrities-view-search-bar" >
+            </div>
+          </div>
+          <div class="celebrity-list col-xs-12">
+            <ul class="row">
+              <!-- single influencer -->
+              <!-- you need to loop on this influencer only the rest can be deleted they are for demo purposes -->
+              <li class="col-xs-12 col-sm-6 col-md-4">
+                <!-- influencer alias in the href -->
+                <a href="/influencers/{{influencer alias}}" class="row col-xs-12 col-sm-12">
+                  <!-- influencer image in the src -->
+                  <img src="https://s3-eu-west-1.amazonaws.com/trellis-content-stage/media/images/2545fc954fb092109e119c2d506ba194.jpeg">
+                  <!-- influencer name -->
+                  <p class="celebrity-name"> {{influencer name}}John Doe</p>
+                </a>
+              </li>
+              <!-- end single influencer -->
+              <!-- *********************** delete these article (demo) *********************  -->
+              <li class="col-xs-12 col-sm-6 col-md-4">
+                <a href="/influencers/{{name.alias}}" class="row col-xs-12 col-sm-12">
+                  <img src="https://s3-eu-west-1.amazonaws.com/trellis-content-stage/media/images/2545fc954fb092109e119c2d506ba194.jpeg">
+                  <p class="celebrity-name">John Doe</p>
+                </a>
+              </li>
+              <li class="col-xs-12 col-sm-6 col-md-4">
+                <a href="/influencers/{{name.alias}}" class="row col-xs-12 col-sm-12">
+                  <img src="https://s3-eu-west-1.amazonaws.com/trellis-content-stage/media/images/2545fc954fb092109e119c2d506ba194.jpeg">
+                  <p class="celebrity-name">John Doe</p>
+                </a>
+              </li>
+              <li class="col-xs-12 col-sm-6 col-md-4">
+                <a href="/influencers/{{name.alias}}" class="row col-xs-12 col-sm-12">
+                  <img src="https://s3-eu-west-1.amazonaws.com/trellis-content-stage/media/images/2545fc954fb092109e119c2d506ba194.jpeg">
+                  <p class="celebrity-name">John Doe</p>
+                </a>
+              </li>
+              <li class="col-xs-12 col-sm-6 col-md-4">
+                <a href="/influencers/{{name.alias}}" class="row col-xs-12 col-sm-12">
+                  <img src="https://s3-eu-west-1.amazonaws.com/trellis-content-stage/media/images/2545fc954fb092109e119c2d506ba194.jpeg">
+                  <p class="celebrity-name">John Doe</p>
+                </a>
+              </li>
+              <li class="col-xs-12 col-sm-6 col-md-4">
+                <a href="/influencers/{{name.alias}}" class="row col-xs-12 col-sm-12">
+                  <img src="https://s3-eu-west-1.amazonaws.com/trellis-content-stage/media/images/2545fc954fb092109e119c2d506ba194.jpeg">
+                  <p class="celebrity-name">John Doe</p>
+                </a>
+              </li>
+              <li class="col-xs-12 col-sm-6 col-md-4">
+                <a href="/influencers/{{name.alias}}" class="row col-xs-12 col-sm-12">
+                  <img src="https://s3-eu-west-1.amazonaws.com/trellis-content-stage/media/images/2545fc954fb092109e119c2d506ba194.jpeg">
+                  <p class="celebrity-name">John Doe</p>
+                </a>
+              </li>
+              <!-- ********************* end delete promoted article ************************** -->
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="najem-grey"></div>
+        <div class="social row center-xs">
+          <div class="small-youtube"></div>
+          <div class="small-insta"></div>
+          <div class="small-fb"></div>
+          <div class="small-twt"></div>
+        </div>
+        <div class="organisation-info row center-xs">
+          <!--<div class="col-xs-12 row center-xs">
+            <div class="col-xs-12 row center-xs">-->
+              <p>شروط الإستخدام</p>
+              <p>سياسة الخصوصية</p>
+              <p>إتصل بنا</p>
+            <!--</div>
+          </div>-->
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
