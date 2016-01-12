@@ -9,7 +9,7 @@
     <!-- Facebook Open Graph Meta Tags -->
     <meta property="fb:app_id" content="app_id"> <!-- facebook app id-->
     <meta property="og:locale" content="ar_LB"> <!-- language -->
-    <meta property="og:title" content="Nancy's Favorite Toy"> <!-- influencers page title -->
+    <meta property="og:title" content="x آخر أخبار"> <!-- influencers page title -->
     <meta property="og:type" content="article">
     <meta property="og:description" content="Nancy loves cars but she loves one specific kind  of a car, that makes her so happy."> <!-- influencers page description -->
     <meta property="og:image:url" content="https://s3-eu-west-1.amazonaws.com/fontfaces/sharingimages/najem-1200x1200.jpg"> <!-- sharing image url -->
@@ -67,56 +67,21 @@
           </div>
           <div class="celebrity-list col-xs-12">
             <ul class="row">
+              @foreach ($content['influencers'] as $influencer)
               <!-- single influencer -->
               <!-- you need to loop on this influencer only the rest can be deleted they are for demo purposes -->
               <li class="col-xs-12 col-sm-6 col-md-4">
                 <!-- influencer alias in the href -->
-                <a href="/influencers/{{influencer alias}}" class="row col-xs-12 col-sm-12">
+                <a href="/-/influencers/{{ $influencer['alias'] }}" class="row col-xs-12 col-sm-12">
                   <!-- influencer image in the src -->
-                  <img src="https://s3-eu-west-1.amazonaws.com/trellis-content-stage/media/images/2545fc954fb092109e119c2d506ba194.jpeg">
+                  <img src="{{ $influencer['avatar'] }}">
                   <!-- influencer name -->
-                  <p class="celebrity-name"> {{influencer name}}John Doe</p>
+                  <p class="celebrity-name"> {{ $influencer['name'] }}</p>
                 </a>
               </li>
               <!-- end single influencer -->
-              <!-- *********************** delete these article (demo) *********************  -->
-              <li class="col-xs-12 col-sm-6 col-md-4">
-                <a href="/influencers/{{name.alias}}" class="row col-xs-12 col-sm-12">
-                  <img src="https://s3-eu-west-1.amazonaws.com/trellis-content-stage/media/images/2545fc954fb092109e119c2d506ba194.jpeg">
-                  <p class="celebrity-name">John Doe</p>
-                </a>
-              </li>
-              <li class="col-xs-12 col-sm-6 col-md-4">
-                <a href="/influencers/{{name.alias}}" class="row col-xs-12 col-sm-12">
-                  <img src="https://s3-eu-west-1.amazonaws.com/trellis-content-stage/media/images/2545fc954fb092109e119c2d506ba194.jpeg">
-                  <p class="celebrity-name">John Doe</p>
-                </a>
-              </li>
-              <li class="col-xs-12 col-sm-6 col-md-4">
-                <a href="/influencers/{{name.alias}}" class="row col-xs-12 col-sm-12">
-                  <img src="https://s3-eu-west-1.amazonaws.com/trellis-content-stage/media/images/2545fc954fb092109e119c2d506ba194.jpeg">
-                  <p class="celebrity-name">John Doe</p>
-                </a>
-              </li>
-              <li class="col-xs-12 col-sm-6 col-md-4">
-                <a href="/influencers/{{name.alias}}" class="row col-xs-12 col-sm-12">
-                  <img src="https://s3-eu-west-1.amazonaws.com/trellis-content-stage/media/images/2545fc954fb092109e119c2d506ba194.jpeg">
-                  <p class="celebrity-name">John Doe</p>
-                </a>
-              </li>
-              <li class="col-xs-12 col-sm-6 col-md-4">
-                <a href="/influencers/{{name.alias}}" class="row col-xs-12 col-sm-12">
-                  <img src="https://s3-eu-west-1.amazonaws.com/trellis-content-stage/media/images/2545fc954fb092109e119c2d506ba194.jpeg">
-                  <p class="celebrity-name">John Doe</p>
-                </a>
-              </li>
-              <li class="col-xs-12 col-sm-6 col-md-4">
-                <a href="/influencers/{{name.alias}}" class="row col-xs-12 col-sm-12">
-                  <img src="https://s3-eu-west-1.amazonaws.com/trellis-content-stage/media/images/2545fc954fb092109e119c2d506ba194.jpeg">
-                  <p class="celebrity-name">John Doe</p>
-                </a>
-              </li>
-              <!-- ********************* end delete promoted article ************************** -->
+              @endforeach
+
             </ul>
           </div>
         </div>

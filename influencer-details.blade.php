@@ -7,22 +7,22 @@
     <base href="/">
     <link rel="stylesheet" href="_public/styles/main.css">
     <!-- Facebook Open Graph Meta Tags -->
-    <meta property="fb:app_id" content="app_id"> <!-- facebook app id-->
+    <meta property="fb:app_id" content="1517491731884075"> <!-- facebook app id-->
     <meta property="og:locale" content="ar_LB"> <!-- language -->
-    <meta property="og:title" content="Nancy's Favorite Toy"> <!-- influencers page title -->
+    <meta property="og:title" content="المشاهير"> <!-- influencers page title -->
     <meta property="og:type" content="article">
-    <meta property="og:description" content="Nancy loves cars but she loves one specific kind  of a car, that makes her so happy."> <!-- influencers page description -->
+    <meta property="og:description" content="يُقدم  موقع نجم الفني آخر أخبار فنانين ومشاهير العرب والعالم بنكهة مميزة ومُختلفة. يخصُكَ نجم بلقاءات حصرية، كما يكشف  جوانب وتفاصيل جديدة وكُل ما تريد معرفته عن النجوم الأحب إلى قلبكَ."> <!-- influencers page description -->
     <meta property="og:image:url" content="https://s3-eu-west-1.amazonaws.com/fontfaces/sharingimages/najem-1200x1200.jpg"> <!-- sharing image url -->
     <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:site" content="@JohnDoe_3"> <!-- twitter handle -->
+    <meta name="twitter:site" content="{!! @AudienceNajem !!}"> <!-- twitter handle -->
     <meta name="twitter:card" content="photo">
-    <meta name="twitter:title" content="Nancy's Favorite Toy"> <!-- home page title -->
-    <meta name="twitter:description" content="Nancy loves cars but she loves one specific kind  of a car, that makes her so happy."> <!-- influencers page description -->
+    <meta name="twitter:title" content="آخر أخبار فنانين ومشاهير العرب والعالم"> <!-- home page title -->
+    <meta name="twitter:description" content="يُقدم  موقع نجم الفني آخر أخبار فنانين ومشاهير العرب والعالم بنكهة مميزة ومُختلفة. يخصُكَ نجم بلقاءات حصرية، كما يكشف جوانب وتفاصيل جديدة وكُل ما تريد معرفته عن النجوم الأحب إلى قلبكَ."> <!-- influencers page description -->
     <meta name="twitter:image:src" content="https://s3-eu-west-1.amazonaws.com/fontfaces/sharingimages/najem-1200x1200.jpg"> <!-- sharing image url -->
     <!-- Google+ Open Graph Meta Tags -->
     <meta property="og:type" content="article">
-    <meta itemprop="og:title" content="Nancy's Favorite Car"> <!-- home page title -->
-    <meta itemprop="og:description" content="Nancy knew that she loves to ride Bimmers. A luxurious, fast, with a very attractive sport look."> <!-- influencers page desciption -->
+    <meta itemprop="og:title" content="آخر أخبار فنانين ومشاهير العرب والعالم"> <!-- home page title -->
+    <meta itemprop="og:description" content="يُقدم  موقع نجم الفني آخر أخبار فنانين ومشاهير العرب والعالم بنكهة مميزة ومُختلفة. يخصُكَ نجم بلقاءات حصرية، كما يكشف جوانب وتفاصيل جديدة وكُل ما تريد معرفته عن النجوم الأحب إلى قلبكَ."> <!-- influencers page desciption -->
     <meta itemprop="og:image:url" content="https://s3-eu-west-1.amazonaws.com/fontfaces/sharingimages/najem-1200x1200.jpg"> <!-- sharing image url -->
   </head>
   <body dir="rtl">
@@ -64,11 +64,11 @@
             <div class="row col-xs-12 col-sm-9 influencer-header">
               <div class="col-xs-5 col-sm-2">
                 <!-- influencer image in the src -->
-                <img src="https://s3-eu-west-1.amazonaws.com/trellis-content-stage/media/images/722a1e8c5fed4a6f6ab722a99bec8fc4.jpeg">
+                <img src="{{ $content['influencer']['avatar'] }}">
               </div>
               <div class="row middle-xs center-xs col-xs-7 influencer">
                 <!-- influencer name here -->
-                <h2 class="influencer-name">{{influencer name here}}ريهانا</h2>
+                <h2 class="influencer-name">{{ $content['influencer']['name'] }}</h2>
               </div>
             </div>
           </div>
@@ -78,11 +78,12 @@
         <div class="influencers-view influencers-wrapper row center-sm">
           <div class="row center-sm col-xs-12 col-sm-9">
             <div class="row col-xs-12 col-sm-9">
+              @foreach ($content['articles'] as $article)
           <!-- single artilce -->
           <!-- you need to loop on this article only the rest can be deleted they are for demo purposes -->
               <div class="influencers-article col-xs-12">
               <!-- article slug in the href -->
-                <a class="row" href="/articles/{{article.slug}}">
+                <a class="row" href="/-/articles/{{ $article['slug'] }}">
                   <div class="inner-articles-wrapper row col-xs-12">
                     <div class="col-sm-4 col-xs-12 desktop-tiny-pic">
                       <span class="article-cover">
@@ -96,51 +97,16 @@
                     <div class="article-details col-sm-8 col-xs-12">
                       <h1 class="article-title">
                       <!-- article title here -->
-                      <span class="article-title-span">{{article title here}}وائل كفوري يعمل على ألبومه الأخير مع "روتانا"!</span></h1>
+                      <span class="article-title-span">{{ $article['title'] }}</span></h1>
                       <!-- article date here -->
-                      <h2 class="article-date">{{article date here}}منذ ٥ أيام</h2>
+                      <h2 class="article-date">{{ $article['rule']['published_at'] }}</h2>
                     </div>
                   </div>
                 </a>
               </div>
             <!-- end single article -->
+            @endforeach
 
-            <!-- *********************** delete these article (demo) *********************  -->
-              <div class="influencers-article col-xs-12">
-                <a class="row" href="/articles/{{article.slug}}">
-                  <div class="inner-articles-wrapper row col-xs-12">
-                    <div class="col-sm-4 col-xs-12 desktop-tiny-pic">
-                      <span class="article-cover">
-                        <span>
-                          <img src="https://s3-eu-west-1.amazonaws.com/trellis-content-stage/media/images/45e5809db0ba086386b03db99d56e3bd_tiny.jpeg" alt="">
-                        </span>
-                      </span>
-                    </div>
-                    <div class="article-details col-sm-8 col-xs-12">
-                      <h1 class="article-title"><span class="article-title-span">وائل كفوري يعمل على ألبومه الأخير مع "روتانا"!</span></h1>
-                      <h2 class="article-date">منذ ٥ أيام</h2>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="influencers-article col-xs-12">
-                <a class="row" href="/articles/{{article.slug}}">
-                  <div class="inner-articles-wrapper row col-xs-12">
-                    <div class="col-sm-4 col-xs-12 desktop-tiny-pic">
-                      <span class="article-cover">
-                        <span>
-                          <img src="https://s3-eu-west-1.amazonaws.com/trellis-content-stage/media/images/45e5809db0ba086386b03db99d56e3bd_tiny.jpeg" alt="">
-                        </span>
-                      </span>
-                    </div>
-                    <div class="article-details col-sm-8 col-xs-12">
-                      <h1 class="article-title"><span class="article-title-span">وائل كفوري يعمل على ألبومه الأخير مع "روتانا"!</span></h1>
-                      <h2 class="article-date">منذ ٥ أيام</h2>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            <!-- ********************* end delete promoted article ************************** -->
             </div>
           </div>
         </div>
