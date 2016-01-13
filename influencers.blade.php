@@ -7,22 +7,22 @@
     <base href="/">
     <link rel="stylesheet" href="_public/styles/main.css">
     <!-- Facebook Open Graph Meta Tags -->
-    <meta property="fb:app_id" content="app_id"> <!-- facebook app id-->
+    <meta property="fb:app_id" content="1517491731884075"> <!-- facebook app id-->
     <meta property="og:locale" content="ar_LB"> <!-- language -->
-    <meta property="og:title" content="x آخر أخبار"> <!-- influencers page title -->
+    <meta property="og:title" content="آخر أخبار فنانين ومشاهير العرب والعالم"> <!-- influencers page title -->
     <meta property="og:type" content="article">
-    <meta property="og:description" content="Nancy loves cars but she loves one specific kind  of a car, that makes her so happy."> <!-- influencers page description -->
+    <meta property="og:description" content="يُقدم  موقع نجم الفني آخر أخبار فنانين ومشاهير العرب والعالم بنكهة مميزة ومُختلفة. يخصُكَ نجم بلقاءات حصرية، كما يكشف جوانب وتفاصيل جديدة وكُل ما تريد معرفته عن النجوم الأحب إلى قلبكَ."> <!-- influencers page description -->
     <meta property="og:image:url" content="https://s3-eu-west-1.amazonaws.com/fontfaces/sharingimages/najem-1200x1200.jpg"> <!-- sharing image url -->
     <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:site" content="@JohnDoe_3"> <!-- twitter handle -->
+    <meta name="twitter:site" content="{!! @AkhbarNajem !!}"> <!-- twitter handle -->
     <meta name="twitter:card" content="photo">
-    <meta name="twitter:title" content="Nancy's Favorite Toy"> <!-- home page title -->
-    <meta name="twitter:description" content="Nancy loves cars but she loves one specific kind  of a car, that makes her so happy."> <!-- influencers page description -->
+    <meta name="twitter:title" content="آخر أخبار فنانين ومشاهير العرب والعالم"> <!-- home page title -->
+    <meta name="twitter:description" content="يُقدم  موقع نجم الفني آخر أخبار فنانين ومشاهير العرب والعالم بنكهة مميزة ومُختلفة. يخصُكَ نجم بلقاءات حصرية، كما يكشف جوانب وتفاصيل جديدة وكُل ما تريد معرفته عن النجوم الأحب إلى قلبكَ."> <!-- influencers page description -->
     <meta name="twitter:image:src" content="https://s3-eu-west-1.amazonaws.com/fontfaces/sharingimages/najem-1200x1200.jpg"> <!-- sharing image url -->
     <!-- Google+ Open Graph Meta Tags -->
     <meta property="og:type" content="article">
-    <meta itemprop="og:title" content="Nancy's Favorite Car"> <!-- home page title -->
-    <meta itemprop="og:description" content="Nancy knew that she loves to ride Bimmers. A luxurious, fast, with a very attractive sport look."> <!-- influencers page desciption -->
+    <meta itemprop="og:title" content="آخر أخبار فنانين ومشاهير العرب والعالم"> <!-- home page title -->
+    <meta itemprop="og:description" content="يُقدم  موقع نجم الفني آخر أخبار فنانين ومشاهير العرب والعالم بنكهة مميزة ومُختلفة. يخصُكَ نجم بلقاءات حصرية، كما يكشف جوانب وتفاصيل جديدة وكُل ما تريد معرفته عن النجوم الأحب إلى قلبكَ."> <!-- influencers page desciption -->
     <meta itemprop="og:image:url" content="https://s3-eu-west-1.amazonaws.com/fontfaces/sharingimages/najem-1200x1200.jpg"> <!-- sharing image url -->
   </head>
   <body dir="rtl">
@@ -38,16 +38,16 @@
         <div class="col-xs-8 col-sm-4 col-md-4 col-lg-2">
           <div class="row nav-pills">
             <div class="latest-tab col-xs-4">
-              <a class="latest-link" href="/latest-articles.html">أحدث</a>
+              <a class="latest-link" href="/latest">أحدث</a>
             </div>
             <div class="explore-tab col-xs-4">
-              <a class="explore-link" href="/index.html">إستكشف</a>
+              <a class="explore-link" href="/">إستكشف</a>
             </div>
             <div class="main-tab col-sm-6">
-              <a class="main-link" href="/index.html">الرئيسية</a>
+              <a class="main-link" href="/">الرئيسية</a>
             </div>
             <div class="celebrities-tab col-xs-4 col-sm-6">
-              <a class="celebrities-link" href="/influencers.html" >المشاهير</a>
+              <a class="celebrities-link" href="/influencers" >المشاهير</a>
             </div>
           </div>
         </div>
@@ -72,7 +72,7 @@
               <!-- you need to loop on this influencer only the rest can be deleted they are for demo purposes -->
               <li class="col-xs-12 col-sm-6 col-md-4">
                 <!-- influencer alias in the href -->
-                <a href="/-/influencers/{{ $influencer['alias'] }}" class="row col-xs-12 col-sm-12">
+                <a href="/influencers/{{ $influencer['alias'] }}" class="row col-xs-12 col-sm-12">
                   <!-- influencer image in the src -->
                   <img src="{{ $influencer['avatar'] }}">
                   <!-- influencer name -->

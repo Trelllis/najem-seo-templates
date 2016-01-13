@@ -16,7 +16,7 @@
     <meta property="og:image:url" content="{{ $content['article']['sharing_image'] }}"> <!-- sharing image url -->
 
     <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:site" content="{!! @AudienceNajem !!}"> <!-- twitter handle -->
+    <meta name="twitter:site" content="{!! @AkhbarNajem !!}"> <!-- twitter handle -->
     <meta name="twitter:card" content="photo">
     <meta name="twitter:title" content="{{ $content['article']['title'] }}"> <!-- artilcle title -->
     <meta name="twitter:description" content="{{ $content['article']['description'] }}"> <!-- article description -->
@@ -43,16 +43,16 @@
         <div class="col-xs-8 col-sm-4 col-md-4 col-lg-2">
           <div class="row nav-pills">
             <div class="latest-tab col-xs-4">
-              <a class="latest-link" href="/latest-articles.html">أحدث</a>
+              <a class="latest-link" href="/latest">أحدث</a>
             </div>
             <div class="explore-tab col-xs-4">
-              <a class="explore-link" href="/index.html">إستكشف</a>
+              <a class="explore-link" href="/">إستكشف</a>
             </div>
             <div class="main-tab col-sm-6">
-              <a class="main-link" href="/index.html">الرئيسية</a>
+              <a class="main-link" href="/">الرئيسية</a>
             </div>
             <div class="celebrities-tab col-xs-4 col-sm-6">
-              <a class="celebrities-link" href="/influencers.html" >المشاهير</a>
+              <a class="celebrities-link" href="/influencers" >المشاهير</a>
             </div>
           </div>
         </div>
@@ -104,7 +104,7 @@
                          @foreach ($content['article']['influencers'] as $influencer)
                           <li>
                             <!-- slug should be in the href -->
-                            <a href="/-/influencers/{{ $influencer['alias'] }}">
+                            <a href="/influencers/{{ $influencer['alias'] }}">
                               <!-- influencer image in the src -->
                               <img src="{{ $influencer['avatar'] }}">
                             </a>
@@ -114,10 +114,29 @@
                         </ul>
                       </div>
                       <!-- if we can add facebook comments here -->
+
+                      <script>
+                        window.fbAsyncInit = function() {
+                          FB.init({
+                            appId      : '1517491731884075',
+                            xfbml      : true,
+                            version    : 'v2.5'
+                          });
+                        };
+
+                        (function(d, s, id){
+                           var js, fjs = d.getElementsByTagName(s)[0];
+                           if (d.getElementById(id)) {return;}
+                           js = d.createElement(s); js.id = id;
+                           js.src = "//connect.facebook.net/en_US/sdk.js";
+                           fjs.parentNode.insertBefore(js, fjs);
+                         }(document, 'script', 'facebook-jssdk'));
+                      </script>
+
                       <div class="comments">
                         <div class="header"><span>التعليقات</span></div>
                         <!-- add the article url in the data-href -->
-                        <div class="fb-comments" data-width="100%" data-href="http://developers.facebook.com/docs/plugins/comments/" data-mobile="true" data-numposts="1"></div>
+                        <div class="fb-comments" data-width="100%" data-href="{{ $content['article']['url'] }}" data-mobile="true" data-numposts="1"></div>
                       </div>
                     </div>
                   </div>

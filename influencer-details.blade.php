@@ -9,21 +9,21 @@
     <!-- Facebook Open Graph Meta Tags -->
     <meta property="fb:app_id" content="1517491731884075"> <!-- facebook app id-->
     <meta property="og:locale" content="ar_LB"> <!-- language -->
-    <meta property="og:title" content="المشاهير"> <!-- influencers page title -->
+    <meta property="og:title" content="آخر أخبار {{ $content['influencer']['name'] }}"> <!-- influencers page title -->
     <meta property="og:type" content="article">
     <meta property="og:description" content="يُقدم  موقع نجم الفني آخر أخبار فنانين ومشاهير العرب والعالم بنكهة مميزة ومُختلفة. يخصُكَ نجم بلقاءات حصرية، كما يكشف  جوانب وتفاصيل جديدة وكُل ما تريد معرفته عن النجوم الأحب إلى قلبكَ."> <!-- influencers page description -->
-    <meta property="og:image:url" content="https://s3-eu-west-1.amazonaws.com/fontfaces/sharingimages/najem-1200x1200.jpg"> <!-- sharing image url -->
+    <meta property="og:image:url" content="{{ $content['influencer']['avatar'] }}"> <!-- sharing image url -->
     <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:site" content="{!! @AudienceNajem !!}"> <!-- twitter handle -->
+    <meta name="twitter:site" content="{!! @AkhbarNajem !!}"> <!-- twitter handle -->
     <meta name="twitter:card" content="photo">
-    <meta name="twitter:title" content="آخر أخبار فنانين ومشاهير العرب والعالم"> <!-- home page title -->
-    <meta name="twitter:description" content="يُقدم  موقع نجم الفني آخر أخبار فنانين ومشاهير العرب والعالم بنكهة مميزة ومُختلفة. يخصُكَ نجم بلقاءات حصرية، كما يكشف جوانب وتفاصيل جديدة وكُل ما تريد معرفته عن النجوم الأحب إلى قلبكَ."> <!-- influencers page description -->
-    <meta name="twitter:image:src" content="https://s3-eu-west-1.amazonaws.com/fontfaces/sharingimages/najem-1200x1200.jpg"> <!-- sharing image url -->
+    <meta name="twitter:title" content="آخر أخبار {{ $content['influencer']['name'] }}"> <!-- home page title -->
+    <meta name="twitter:description" content="يُقدم  موقع نجم الفني آخر أخبار فنانين ومشاهير العرب والعالم بنكهة مميزة ومُختلفة. يخصُكَ نجم بلقاءات حصرية، كما يكشف  جوانب وتفاصيل جديدة وكُل ما تريد معرفته عن النجوم الأحب إلى قلبكَ."> <!-- influencers page description -->
+    <meta name="twitter:image:src" content="{{ $content['influencer']['avatar'] }}"> <!-- sharing image url -->
     <!-- Google+ Open Graph Meta Tags -->
     <meta property="og:type" content="article">
-    <meta itemprop="og:title" content="آخر أخبار فنانين ومشاهير العرب والعالم"> <!-- home page title -->
-    <meta itemprop="og:description" content="يُقدم  موقع نجم الفني آخر أخبار فنانين ومشاهير العرب والعالم بنكهة مميزة ومُختلفة. يخصُكَ نجم بلقاءات حصرية، كما يكشف جوانب وتفاصيل جديدة وكُل ما تريد معرفته عن النجوم الأحب إلى قلبكَ."> <!-- influencers page desciption -->
-    <meta itemprop="og:image:url" content="https://s3-eu-west-1.amazonaws.com/fontfaces/sharingimages/najem-1200x1200.jpg"> <!-- sharing image url -->
+    <meta itemprop="og:title" content="آخر أخبار {{ $content['influencer']['name'] }}"> <!-- home page title -->
+    <meta itemprop="og:description" content="يُقدم  موقع نجم الفني آخر أخبار فنانين ومشاهير العرب والعالم بنكهة مميزة ومُختلفة. يخصُكَ نجم بلقاءات حصرية، كما يكشف  جوانب وتفاصيل جديدة وكُل ما تريد معرفته عن النجوم الأحب إلى قلبكَ."> <!-- influencers page desciption -->
+    <meta itemprop="og:image:url" content="{{ $content['influencer']['avatar'] }}"> <!-- sharing image url -->
   </head>
   <body dir="rtl">
     <div class="mother-ship">
@@ -38,16 +38,16 @@
         <div class="col-xs-8 col-sm-4 col-md-4 col-lg-2">
           <div class="row nav-pills">
             <div class="latest-tab col-xs-4">
-              <a class="latest-link" href="/latest-articles.html">أحدث</a>
+              <a class="latest-link" href="/latest">أحدث</a>
             </div>
             <div class="explore-tab col-xs-4">
-              <a class="explore-link" href="/index.html">إستكشف</a>
+              <a class="explore-link" href="/">إستكشف</a>
             </div>
             <div class="main-tab col-sm-6">
-              <a class="main-link" href="/index.html">الرئيسية</a>
+              <a class="main-link" href="/">الرئيسية</a>
             </div>
             <div class="celebrities-tab col-xs-4 col-sm-6">
-              <a class="celebrities-link" href="/influencers.html" >المشاهير</a>
+              <a class="celebrities-link" href="/influencers" >المشاهير</a>
             </div>
           </div>
         </div>
@@ -83,14 +83,14 @@
           <!-- you need to loop on this article only the rest can be deleted they are for demo purposes -->
               <div class="influencers-article col-xs-12">
               <!-- article slug in the href -->
-                <a class="row" href="/-/articles/{{ $article['slug'] }}">
+                <a class="row" href="/articles/{{ $article['slug'] }}">
                   <div class="inner-articles-wrapper row col-xs-12">
                     <div class="col-sm-4 col-xs-12 desktop-tiny-pic">
                       <span class="article-cover">
                         <span>
                         <!-- cover image url in the src -->
                         <!-- article title in alt -->
-                          <img src="https://s3-eu-west-1.amazonaws.com/trellis-content-stage/media/images/45e5809db0ba086386b03db99d56e3bd_tiny.jpeg" alt="">
+                          <img src="{{ $article['cover']['url'] }}" alt="{{ $article['title'] }}">
                         </span>
                       </span>
                     </div>

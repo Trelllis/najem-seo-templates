@@ -16,7 +16,7 @@
     <meta property="og:image:url" content="https://s3-eu-west-1.amazonaws.com/fontfaces/sharingimages/najem-1200x1200.jpg"> <!-- sharing image url -->
 
     <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:site" content="{!! @AudienceNajem !!}"> <!-- twitter handle -->
+    <meta name="twitter:site" content="{!! @AkhbarNajem !!}"> <!-- twitter handle -->
     <meta name="twitter:card" content="photo">
     <meta name="twitter:title" content="آخر أخبار فنانين ومشاهير العرب والعالم"> <!-- home page title -->
     <meta name="twitter:description" content="يُقدم  موقع نجم الفني آخر أخبار فنانين ومشاهير العرب والعالم بنكهة مميزة ومُختلفة. يخصُكَ نجم بلقاءات حصرية، كما يكشف جوانب وتفاصيل جديدة وكُل ما تريد معرفته عن النجوم الأحب إلى قلبكَ."> <!-- homepage description -->
@@ -43,16 +43,16 @@
         <div class="col-xs-8 col-sm-4 col-md-4 col-lg-2">
           <div class="row nav-pills">
             <div class="latest-tab col-xs-4">
-              <a class="latest-link" href="/latest-articles.html">أحدث</a>
+              <a class="latest-link" href="/latest">أحدث</a>
             </div>
             <div class="explore-tab col-xs-4">
-              <a class="explore-link" href="/index.html">إستكشف</a>
+              <a class="explore-link" href="/">إستكشف</a>
             </div>
             <div class="main-tab col-sm-6">
-              <a class="main-link" href="/index.html">الرئيسية</a>
+              <a class="main-link" href="/">الرئيسية</a>
             </div>
             <div class="celebrities-tab col-xs-4 col-sm-6">
-              <a class="celebrities-link" href="/influencers.html" >المشاهير</a>
+              <a class="celebrities-link" href="/influencers" >المشاهير</a>
             </div>
           </div>
         </div>
@@ -102,7 +102,6 @@
           <div class="row around-sm">
           @foreach ($content['articles'] as $article)
           <!-- single artilce -->
-          <!-- you need to loop on this article only the rest can be deleted they are for demo purposes -->
             <div class="inner-latest-article col-xs-10">
             <!-- article slug in the href -->
               <a href="/articles/{{$article['slug']}}">
@@ -126,7 +125,7 @@
         </div>
 
         <!-- href for the latest articles section -->
-        <a class="row center-xs col-xs-12 all-articles-anchor" href="/latest-articles.html">
+        <a class="row center-xs col-xs-12 all-articles-anchor" href="/latest">
           <button type="button" class="button-all-articles col-xs-6 col-sm-11">كل الأخبار</button>
         </a>
       </div>
