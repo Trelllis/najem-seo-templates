@@ -8,25 +8,25 @@
     <link rel="stylesheet" href="_public/styles/main.css">
 
     <!-- Facebook Open Graph Meta Tags -->
-    <meta property="fb:app_id" content="app_id"> <!-- facebook app id-->
+    <meta property="fb:app_id" content="1517491731884075"> <!-- facebook app id-->
     <meta property="og:locale" content="ar_LB"> <!-- language -->
-    <meta property="og:title" content="Nancy's Favorite Toy"> <!-- article title -->
+    <meta property="og:title" content="{{ $content['article']['title'] }}"> <!-- article title -->
     <meta property="og:type" content="article">
-    <meta property="og:description" content="Nancy loves cars but she loves one specific kind  of a car, that makes her so happy."> <!-- article description -->
-    <meta property="og:image:url" content="Image Url here"> <!-- sharing image url -->
+    <meta property="og:description" content="{{ $content['article']['description'] }}"> <!-- article description -->
+    <meta property="og:image:url" content="{{ $content['article']['sharing_image'] }}"> <!-- sharing image url -->
 
     <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:site" content="@JohnDoe_3"> <!-- twitter handle -->
+    <meta name="twitter:site" content="{!! @AkhbarNajem !!}"> <!-- twitter handle -->
     <meta name="twitter:card" content="photo">
-    <meta name="twitter:title" content="Nancy's Favorite Toy"> <!-- artilcle title -->
-    <meta name="twitter:description" content="Nancy loves cars but she loves one specific kind  of a car, that makes her so happy."> <!-- article description -->
-    <meta name="twitter:image:src" content="Image Url here"> <!-- sharing image url -->
+    <meta name="twitter:title" content="{{ $content['article']['title'] }}"> <!-- artilcle title -->
+    <meta name="twitter:description" content="{{ $content['article']['description'] }}"> <!-- article description -->
+    <meta name="twitter:image:src" content="{{ $content['article']['sharing_image'] }}"> <!-- sharing image url -->
 
     <!-- Google+ Open Graph Meta Tags -->
     <meta property="og:type" content="article">
-    <meta itemprop="og:title" content="Nancy's Favorite Car"> <!-- article title -->
-    <meta itemprop="og:description" content="Nancy knew that she loves to ride Bimmers. A luxurious, fast, with a very attractive sport look."> <!-- article desciption -->
-    <meta itemprop="og:image:url" content="Image Url here"> <!-- sharing image url -->
+    <meta itemprop="og:title" content="{{ $content['article']['title'] }}"> <!-- article title -->
+    <meta itemprop="og:description" content="{{ $content['article']['description'] }}"> <!-- article desciption -->
+    <meta itemprop="og:image:url" content="{{ $content['article']['sharing_image'] }}"> <!-- sharing image url -->
 
   </head>
   <body dir="rtl">
@@ -43,16 +43,16 @@
         <div class="col-xs-8 col-sm-4 col-md-4 col-lg-2">
           <div class="row nav-pills">
             <div class="latest-tab col-xs-4">
-              <a class="latest-link" href="/latest-articles.html">أحدث</a>
+              <a class="latest-link" href="/latest">أحدث</a>
             </div>
             <div class="explore-tab col-xs-4">
-              <a class="explore-link" href="/index.html">إستكشف</a>
+              <a class="explore-link" href="/">إستكشف</a>
             </div>
             <div class="main-tab col-sm-6">
-              <a class="main-link" href="/index.html">الرئيسية</a>
+              <a class="main-link" href="/">الرئيسية</a>
             </div>
             <div class="celebrities-tab col-xs-4 col-sm-6">
-              <a class="celebrities-link" href="/influencers.html" >المشاهير</a>
+              <a class="celebrities-link" href="/influencers" >المشاهير</a>
             </div>
           </div>
         </div>
@@ -72,16 +72,16 @@
                   <span>
                     <!-- cover image url in the src -->
                     <!-- article title in the alt -->
-                    <img src="https://s3-eu-west-1.amazonaws.com/trellis-content-stage/media/images/e18259de23875d9b486efc2f7f84e348_original.png" alt="">
+                    <img src="{{ $content['article']['cover']['url'] }}" alt="{{ $content['article']['title'] }}">
                   </span>
                 </span>
                 <div class="article-details">
                   <h1 class="article-title">
                     <!-- article title here -->
-                    <span class="article-title-span"> {{article title here}} اتبينسم يىسشتىينتسش ىلتيسش ىتليسش ىتل ىشتل ىشتلي سىشتمليسش</span>
+                    <span class="article-title-span"> {{ $content['article']['title'] }} </span>
                   </h1>
                   <!-- article date -->
-                  <h2 class="article-date">{{article date here}} منذ ٢ أيام</h2>
+                  <h2 class="article-date">{{ $content['article']['rule']['published_at'] }} </h2>
                 </div>
               </div>
             </div>
@@ -95,28 +95,48 @@
                       <!-- article content here -->
                       <div class="info-wrapper">
                         <!-- article html content here -->
-                        اتبينسم يىسشتىينتسش ىلتيسش ىتليسش ىتل ىشتل ىشتلي سىشتمليسش اتبينسم يىسشتىينتسش ىلتيسش ىتليسش ىتل ىشتل ىشتلي سىشتمليسش اتبينسم يىسشتىينتسش ىلتيسش ىتليسش ىتل ىشتل ىشتلي سىشتمليسش اتبينسم يىسشتىينتسش ىلتيسش ىتليسش ىتل ىشتل ىشتلي سىشتمليسش اتبينسم يىسشتىينتسش ىلتيسش ىتليسش ىتل ىشتل ىشتلي سىشتمليسش اتبينسم يىسشتىينتسش ىلتيسش ىتليسش ىتل ىشتل ىشتلي سىشتمليسش ر ر ر ر ر  اتبينسم يىسشتىينتسش ىلتيسش ىتليسش ىتل ىشتل ىشتلي سىشتمليسشر اتبينسم يىسشتىينتسش ىلتيسش ىتليسش ىتل ىشتل ىشتلي  سىشتملي سشات بينسم يىس شتىي نتسش ىلتيسش ىتليسش ىتل ىشتل ىشتلي سىشتمليسش
-                        اتبينسم يىسشتىينتسش ىلتيسش ىتليسش ىتل ىشتل ىشتلي سىشتمليسش اتبينسم يىسشتىينتسش ىلتيسش ىتليسش ىتل ىشتل ىشتلي سىشتمليسش اتبينسم
+                        {{ $content['article']['content'] }}
                       </div>
                       <div class="article-speaks-about">
                         <div class="header">هذا المقال يتحدث عن</div>
                         <ul class="celebrities-pics">
                          <!-- related influencers here -->
+                         @foreach ($content['article']['influencers'] as $influencer)
                           <li>
                             <!-- slug should be in the href -->
-                            <a href="/influencers/{{slug here}}">
+                            <a href="/influencers/{{ $influencer['alias'] }}">
                               <!-- influencer image in the src -->
-                              <img src="https://s3-eu-west-1.amazonaws.com/trellis-content-stage/media/images/7028e27d963c71a925bb380066bedfff.jpeg">
+                              <img src="{{ $influencer['avatar'] }}">
                             </a>
                           </li>
                           <!-- end related influencer loop here -->
+                          @endforeach
                         </ul>
                       </div>
                       <!-- if we can add facebook comments here -->
+
+                      <script>
+                        window.fbAsyncInit = function() {
+                          FB.init({
+                            appId      : '1517491731884075',
+                            xfbml      : true,
+                            version    : 'v2.5'
+                          });
+                        };
+
+                        (function(d, s, id){
+                           var js, fjs = d.getElementsByTagName(s)[0];
+                           if (d.getElementById(id)) {return;}
+                           js = d.createElement(s); js.id = id;
+                           js.src = "//connect.facebook.net/en_US/sdk.js";
+                           fjs.parentNode.insertBefore(js, fjs);
+                         }(document, 'script', 'facebook-jssdk'));
+                      </script>
+
                       <div class="comments">
                         <div class="header"><span>التعليقات</span></div>
                         <!-- add the article url in the data-href -->
-                        <div class="fb-comments" data-width="100%" data-href="http://developers.facebook.com/docs/plugins/comments/" data-mobile="true" data-numposts="1"></div>
+                        <div class="fb-comments" data-width="100%" data-href="{{ $content['article']['url'] }}" data-mobile="true" data-numposts="1"></div>
                       </div>
                     </div>
                   </div>
